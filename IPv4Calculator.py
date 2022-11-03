@@ -1,13 +1,14 @@
 import re
 
 class IPv4NetworkCalculator():
-    def __init__(self, ip='', prefixo='', mask='', rede='', broadcast='', num_ips=''):
+    def __init__(self, ip='', prefixo='', mask='', rede='', broadcast='', num_ips='', classe=''):
         self.ip = ip
         self.prefixo = prefixo
         self.mask = mask
         self.rede = rede
         self.broadcast = broadcast
         self.num_ips = num_ips
+        self.classe = classe
 
         if self.ip == '':
             raise ValueError("IP não enviado")
@@ -27,6 +28,22 @@ class IPv4NetworkCalculator():
         self.set_num_ips()
         self.set_rede_broadcast()
         self.mask_prefixo()
+        self.what_class()
+
+    def what_class(self):
+        classe = ''
+        mask = self.mask 
+        if mask == '255.255.255.0':
+            classe = 'C'
+        elif mask == '255.255.0.0':
+            classe = 'B'
+        elif mask == '255.0.0.0':
+            classe = 'A'
+        self.classe = classe
+
+        return self.classe
+        
+            
 
     def set_rede_broadcast(self):
         ip_bin = self.ip_decimal_for_binary(self.ip)
@@ -124,6 +141,7 @@ class IPv4NetworkCalculator():
             'Rede':self.rede,
             'Broadcast':self.broadcast, 
             'Número de IPs em cada Rede':self.num_ips,
+            'Classe':self.classe,
         }
 
 
