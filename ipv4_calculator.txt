@@ -1,0 +1,30 @@
+cálculo de sub-rede IPv4 em Pyhton
+
+ip ou ip/cidr (obrigatorio)
+prefixo (ou prefixo ou mascara)
+mascara(ou  mascara ou prefixo)
+rede
+broadcast
+numero de ip's
+
+
+Check List
+- checar se o ip foi enviado
+- checar se o ip tem prefixo
+        - extrair o prefixo 
+- verificar so o ip é valido
+- checar se a mascara ou prefixo foram enviados
+- converter IP decimal para binario
+- obter prefixo ou mascara
+-  obter numero de IPs da rede (2^num_bit_host)
+- configurar o broadcast e rede em binario
+- obter a mascara de sub-rede do prefixo
+
+
+Retorno final
+Dicionario com ip 
+prefixo
+mascara
+rede
+broadcast
+numero-IPs
