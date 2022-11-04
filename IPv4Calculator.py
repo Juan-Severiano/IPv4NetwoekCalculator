@@ -146,10 +146,6 @@ class IPv4NetworkCalculator():
 
 
 
-
-
-
-
 if __name__ == '__main__':
     ipv4 = IPv4NetworkCalculator(ip=input('Digite seu número IP [Prefixo Necessário]: '))
     print( ipv4.get_all() )
